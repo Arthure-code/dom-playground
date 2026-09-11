@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terrain de jeu DOM</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/texte.js"></script>
+  <script defer src="js/image.js"></script>
+  <script defer src="js/couleur.js"></script>
+  <script defer src="js/compteur.js"></script>
+</head>
+<body>
+  <header class="entete">
+    <h1>Terrain de jeu DOM</h1>
+    <p>Quatre interactions, quatre événements, aucune bibliothèque. Chaque carte est tenue par son propre script.</p>
+  </header>
+
+  <main class="grille">
+    <section class="carte" aria-labelledby="titre-texte">
+      <h2 id="titre-texte">Changer un texte</h2>
+      <p class="note">Un <code>click</code> sur le premier paragraphe réécrit le second.</p>
+      <div class="demo">
+        <p id="declencheur" class="cliquable">Cliquez ici pour modifier l'autre paragraphe.</p>
+        <p id="cible" class="resultat">Contenu dynamique</p>
+      </div>
+    </section>
+
+    <section class="carte" aria-labelledby="titre-image">
+      <h2 id="titre-image">Animer une image</h2>
+      <p class="note">Au <code>mouseover</code>, la source de l'image change pour sa version animée ; au <code>mouseout</code>, elle revient.</p>
+      <div class="demo demo-centree">
+        <img id="terminal" src="images/terminal.svg" width="160" height="120" alt="Un terminal dont l'invite attend une commande">
+      </div>
+    </section>
+
+    <section class="carte" aria-labelledby="titre-couleur">
+      <h2 id="titre-couleur">Colorer au survol</h2>
+      <p class="note">Le paragraphe passe du noir au bleu sous la souris, sans être un lien et sans une ligne de CSS.</p>
+      <div class="demo">
+        <p id="survolable" class="survolable">Passez la souris sur ce paragraphe pour le voir changer de couleur.</p>
+      </div>
+    </section>
+
+    <section class="carte" aria-labelledby="titre-compteur">
+      <h2 id="titre-compteur">Compter les clics</h2>
+      <p class="note">Le bouton garde le compte et le réécrit à chaque <code>click</code>.</p>
+      <div class="demo demo-centree">
+        <button type="button" id="compteur">Tu m'as cliqué 0 fois</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

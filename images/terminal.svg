@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" width="160" height="120" role="img" aria-label="Un terminal dont l'invite attend une commande">
+  <rect x="4" y="4" width="152" height="112" rx="10" fill="#1f2d3d" stroke="#2dd4bf" stroke-width="3"/>
+  <rect x="4" y="4" width="152" height="22" rx="10" fill="#243447"/>
+  <rect x="4" y="16" width="152" height="10" fill="#243447"/>
+  <circle cx="18" cy="15" r="4" fill="#ff5f57"/>
+  <circle cx="31" cy="15" r="4" fill="#febc2e"/>
+  <circle cx="44" cy="15" r="4" fill="#28c840"/>
+  <text x="18" y="52" font-family="Consolas, monospace" font-size="16" fill="#2dd4bf">$</text>
+  <rect x="32" y="40" width="9" height="16" fill="#e6edf3"/>
+</svg>
