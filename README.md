@@ -1,27 +1,28 @@
 # dom-playground
 
 What does it take to make a page react to a click or to the mouse passing by,
-with nothing but the browser? Four cards, one interaction each, one script
-each, and no library.
+with nothing but the browser? Five cards, one interaction each, one script
+each, and no JavaScript library.
 
-Plain HTML, CSS and JavaScript. No framework, no build step, no dependency:
-open the file and try each card.
+The page sits on the layout and stylesheet that the ASP.NET Core project
+template ships, Bootstrap 5.1.0 included, so it looks like any freshly
+created .NET web app. No build step: open the file and try each card.
 
 > The user interface is in French, as is the code vocabulary. This README and
 > the repository metadata are in English.
 
 ## Screenshots
 
-![A dark page titled Terrain de jeu DOM with four cards in a two by two grid. Changer un texte shows a dotted-underlined sentence and, below it, Et voilà ! in teal. Animer une image shows a small drawn terminal window with a command being typed. Colorer au survol shows a white paragraph whose text is blue. Compter les clics shows a teal button reading Tu m'as cliqué 4 fois](preview.png)
+![A white page in the ASP.NET Core template style: a white navigation bar with the brand Terrain de jeu DOM and five links, a large centred title, then four Bootstrap cards in a two by two grid and a fifth, full width, underneath. Changer un texte shows an underlined sentence and, below it, Et voilà ! in bold. Animer une image shows a small drawn terminal window with a command being typed. Colorer au survol shows a white paragraph whose text is blue. Compter les clics shows a blue button reading Tu m'as cliqué 4 fois. The wide card asks Qu'avez-vous pensé de cette page ? above four outlined buttons, the first, Utile, filled in grey, and a blue reply line underneath. A grey footer reads © 2026 - Terrain de jeu DOM - Licence](preview.png)
 
-![The same page on a phone: the four cards stack in one column, the first reads Et voilà !, the third paragraph is blue and the button reads Tu m'as cliqué 2 fois](preview-mobile.png)
+![The same page on a phone: the navigation collapses behind a toggler, the title stays centred and the cards stack in one column, the first reading Et voilà !](preview-mobile.png)
 
 ## How it works
 
 **One script per card, and nothing shared.** `js/texte.js`, `js/image.js`,
-`js/couleur.js` and `js/compteur.js` each grab the elements they need by id
-and attach their listeners. Removing a card means removing one script tag and
-one file; the other three do not notice.
+`js/couleur.js`, `js/compteur.js` and `js/reactions.js` each grab the elements
+they need by id and attach their listeners. Removing a card means removing one
+script tag and one file; the others do not notice.
 
 **Every interaction is a listener, never an attribute.** The HTML carries no
 `onclick` or `onmouseover`. All wiring happens through `addEventListener`, so
@@ -42,27 +43,38 @@ is not a link.
 is the whole memory of the fourth card. Each click increments it and rewrites
 the button's text.
 
+**Four buttons, one listener.** The fifth card never attaches anything to a
+button. Its single listener sits on the buttons' parent; a click bubbles up to
+it, `event.target.closest("button")` names the button that was pressed, and
+that button's `data-message` attribute supplies the reply. Adding a fifth
+button is one line of HTML and no JavaScript.
+
 ## Running it
 
 Open `index.html` in a browser. There is nothing to install.
 
 ## Stack
 
-HTML, CSS and vanilla JavaScript. One stylesheet, four scripts, two SVG icons,
-no library.
+HTML, Bootstrap 5.1.0 and vanilla JavaScript. The `site.css` is the one the
+ASP.NET Core template generates, reproduced as is, with three rules added for
+the page. Five scripts, two SVG icons, no JavaScript library.
 
 ## Résumé
 
-Quatre interactions DOM sur une page, sans bibliothèque : un clic qui réécrit
+Cinq interactions DOM sur une page, sans bibliothèque de script : un clic qui réécrit
 un paragraphe, une image qui change de source au survol de la souris, un
-paragraphe qui passe du noir au bleu sous la souris sans être un lien, et un
-bouton qui compte ses propres clics. Chaque carte est tenue par son propre
+paragraphe qui passe du noir au bleu sous la souris sans être un lien, un
+bouton qui compte ses propres clics, et une barre de quatre boutons tenue par
+un seul écouteur posé sur leur parent, où `event.target` désigne le bouton
+pressé et son attribut `data-message` fournit la réponse. Chaque carte est tenue par son propre
 script, qui prend ses éléments par leur identifiant et pose ses écouteurs
 avec `addEventListener` ; le HTML ne porte aucun attribut d'événement. Le
 changement de couleur est fait volontairement par le script et non par une
 règle `:hover`, puisque c'est le sujet de la carte. Les deux icônes de
 terminal sont des SVG dessinés pour le projet, la version animée portant ses
-propres images clés CSS. Interface et vocabulaire du code en français.
+propres images clés CSS. La mise en page reprend le gabarit ASP.NET Core tel
+qu'il est livré, Bootstrap 5.1.0 compris. Interface et vocabulaire du code en
+français.
 
 ## Licence
 

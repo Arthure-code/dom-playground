@@ -1,54 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terrain de jeu DOM</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accueil - Terrain de jeu DOM</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/site.css" />
   <script defer src="js/texte.js"></script>
   <script defer src="js/image.js"></script>
   <script defer src="js/couleur.js"></script>
   <script defer src="js/compteur.js"></script>
+  <script defer src="js/reactions.js"></script>
 </head>
 <body>
-  <header class="entete">
-    <h1>Terrain de jeu DOM</h1>
-    <p>Quatre interactions, quatre événements, aucune bibliothèque. Chaque carte est tenue par son propre script.</p>
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">Terrain de jeu DOM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Afficher le menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+          <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item"><a class="nav-link text-dark" href="#titre-texte">Texte</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#titre-image">Image</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#titre-couleur">Couleur</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#titre-compteur">Compteur</a></li>
+            <li class="nav-item"><a class="nav-link text-dark" href="#titre-reactions">Réactions</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
-
-  <main class="grille">
-    <section class="carte" aria-labelledby="titre-texte">
-      <h2 id="titre-texte">Changer un texte</h2>
-      <p class="note">Un <code>click</code> sur le premier paragraphe réécrit le second.</p>
-      <div class="demo">
-        <p id="declencheur" class="cliquable">Cliquez ici pour modifier l'autre paragraphe.</p>
-        <p id="cible" class="resultat">Contenu dynamique</p>
+  <div class="container">
+    <main role="main" class="pb-3">
+      <div class="text-center">
+        <h1 class="display-4">Terrain de jeu DOM</h1>
+        <p>Cinq interactions, aucune bibliothèque de script. Chaque carte est tenue par son propre fichier JavaScript.</p>
       </div>
-    </section>
 
-    <section class="carte" aria-labelledby="titre-image">
-      <h2 id="titre-image">Animer une image</h2>
-      <p class="note">Au <code>mouseover</code>, la source de l'image change pour sa version animée ; au <code>mouseout</code>, elle revient.</p>
-      <div class="demo demo-centree">
-        <img id="terminal" src="images/terminal.svg" width="160" height="120" alt="Un terminal dont l'invite attend une commande">
-      </div>
-    </section>
+      <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title h5" id="titre-texte">Changer un texte</h2>
+              <p class="card-text text-muted">Un <code>click</code> sur le premier paragraphe réécrit le second.</p>
+              <div class="demo bg-light border rounded p-3">
+                <p id="declencheur" class="cliquable text-decoration-underline mb-2">Cliquez ici pour modifier l'autre paragraphe.</p>
+                <p id="cible" class="fw-bold mb-0">Contenu dynamique</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <section class="carte" aria-labelledby="titre-couleur">
-      <h2 id="titre-couleur">Colorer au survol</h2>
-      <p class="note">Le paragraphe passe du noir au bleu sous la souris, sans être un lien et sans une ligne de CSS.</p>
-      <div class="demo">
-        <p id="survolable" class="survolable">Passez la souris sur ce paragraphe pour le voir changer de couleur.</p>
-      </div>
-    </section>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title h5" id="titre-image">Animer une image</h2>
+              <p class="card-text text-muted">Au <code>mouseover</code>, la source de l'image change pour sa version animée ; au <code>mouseout</code>, elle revient.</p>
+              <div class="demo bg-light border rounded p-3 d-flex justify-content-center align-items-center">
+                <img id="terminal" src="images/terminal.svg" width="160" height="120" alt="Un terminal dont l'invite attend une commande">
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <section class="carte" aria-labelledby="titre-compteur">
-      <h2 id="titre-compteur">Compter les clics</h2>
-      <p class="note">Le bouton garde le compte et le réécrit à chaque <code>click</code>.</p>
-      <div class="demo demo-centree">
-        <button type="button" id="compteur">Tu m'as cliqué 0 fois</button>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title h5" id="titre-couleur">Colorer au survol</h2>
+              <p class="card-text text-muted">Le paragraphe passe du noir au bleu sous la souris, sans être un lien et sans une ligne de CSS.</p>
+              <div class="demo bg-light border rounded p-3">
+                <p id="survolable" class="survolable bg-white border rounded p-3 mb-0">Passez la souris sur ce paragraphe pour le voir changer de couleur.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title h5" id="titre-compteur">Compter les clics</h2>
+              <p class="card-text text-muted">Le bouton garde le compte et le réécrit à chaque <code>click</code>.</p>
+              <div class="demo bg-light border rounded p-3 d-flex justify-content-center align-items-center">
+                <button type="button" id="compteur" class="btn btn-primary">Tu m'as cliqué 0 fois</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
-  </main>
+
+      <div class="row g-4 mt-0">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title h5" id="titre-reactions">Un seul gestionnaire pour plusieurs boutons</h2>
+              <p class="card-text text-muted">Quatre boutons, un seul écouteur, posé sur leur parent. L'événement remonte, <code>event.target</code> dit lequel a été pressé, et son attribut <code>data-message</code> fournit la réponse.</p>
+              <div class="demo bg-light border rounded p-3">
+                <p class="fw-bold mb-2">Qu'avez-vous pensé de cette page ?</p>
+                <div id="reactions" class="d-flex flex-wrap gap-2">
+                  <button type="button" class="btn btn-outline-secondary" data-message="Merci, c'est le but : que ce soit utile.">Utile</button>
+                  <button type="button" class="btn btn-outline-secondary" data-message="Tant mieux, chaque carte devait tenir en un coup d'œil.">Claire</button>
+                  <button type="button" class="btn btn-outline-secondary" data-message="C'est voulu : cinq idées, cinq scripts, rien de plus.">Trop courte</button>
+                  <button type="button" class="btn btn-outline-secondary" data-message="Dites-nous ce qui manque, la page est faite pour évoluer.">À revoir</button>
+                </div>
+                <p id="reponse" class="text-primary mt-3 mb-0" aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="border-top footer text-muted">
+    <div class="container">
+      &copy; 2026 - Terrain de jeu DOM - <a href="LICENSE">Licence</a>
+    </div>
+  </footer>
+
+  <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
