@@ -6,7 +6,6 @@ each, and no JavaScript library.
 
 No build step: open the file and try each card.
 
-
 ## Screenshots
 
 ![A white page: a white navigation bar with the brand Terrain de jeu DOM and five links, a large centred title, then four Bootstrap cards in a two by two grid and a fifth, full width, underneath. Changer un texte shows an underlined sentence and, below it, Et voilà ! in bold. Animer une image shows a small drawn terminal window with a command being typed. Colorer au survol shows a white paragraph whose text is blue. Compter les clics shows a blue button reading Tu m'as cliqué 4 fois. The wide card asks Qu'avez-vous pensé de cette page ? above four outlined buttons, the first, Utile, filled in grey, and a blue reply line underneath. A grey footer reads © 2026 - Terrain de jeu DOM - Licence](preview.png)
@@ -67,7 +66,7 @@ avec `addEventListener` ; le HTML ne porte aucun attribut d'événement. Le
 changement de couleur est fait volontairement par le script et non par une
 règle `:hover`, puisque c'est le sujet de la carte. Les deux icônes de
 terminal sont des SVG dessinés pour le projet, la version animée portant ses
-propres images clés CSS. Interface et vocabulaire du code en français.
+propres images clés CSS.
 
 ## Licence
 
