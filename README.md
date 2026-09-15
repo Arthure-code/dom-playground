@@ -6,8 +6,6 @@ each, and no JavaScript library.
 
 No build step: open the file and try each card.
 
-> The user interface is in French, as is the code vocabulary. This README and
-> the repository metadata are in English.
 
 ## Screenshots
 
