@@ -4,16 +4,14 @@ What does it take to make a page react to a click or to the mouse passing by,
 with nothing but the browser? Five cards, one interaction each, one script
 each, and no JavaScript library.
 
-The page sits on the layout and stylesheet that the ASP.NET Core project
-template ships, Bootstrap 5.1.0 included, so it looks like any freshly
-created .NET web app. No build step: open the file and try each card.
+No build step: open the file and try each card.
 
 > The user interface is in French, as is the code vocabulary. This README and
 > the repository metadata are in English.
 
 ## Screenshots
 
-![A white page in the ASP.NET Core template style: a white navigation bar with the brand Terrain de jeu DOM and five links, a large centred title, then four Bootstrap cards in a two by two grid and a fifth, full width, underneath. Changer un texte shows an underlined sentence and, below it, Et voilà ! in bold. Animer une image shows a small drawn terminal window with a command being typed. Colorer au survol shows a white paragraph whose text is blue. Compter les clics shows a blue button reading Tu m'as cliqué 4 fois. The wide card asks Qu'avez-vous pensé de cette page ? above four outlined buttons, the first, Utile, filled in grey, and a blue reply line underneath. A grey footer reads © 2026 - Terrain de jeu DOM - Licence](preview.png)
+![A white page: a white navigation bar with the brand Terrain de jeu DOM and five links, a large centred title, then four Bootstrap cards in a two by two grid and a fifth, full width, underneath. Changer un texte shows an underlined sentence and, below it, Et voilà ! in bold. Animer une image shows a small drawn terminal window with a command being typed. Colorer au survol shows a white paragraph whose text is blue. Compter les clics shows a blue button reading Tu m'as cliqué 4 fois. The wide card asks Qu'avez-vous pensé de cette page ? above four outlined buttons, the first, Utile, filled in grey, and a blue reply line underneath. A grey footer reads © 2026 - Terrain de jeu DOM - Licence](preview.png)
 
 ![The same page on a phone: the navigation collapses behind a toggler, the title stays centred and the cards stack in one column, the first reading Et voilà !](preview-mobile.png)
 
@@ -55,9 +53,8 @@ Open `index.html` in a browser. There is nothing to install.
 
 ## Stack
 
-HTML, Bootstrap 5.1.0 and vanilla JavaScript. The `site.css` is the one the
-ASP.NET Core template generates, reproduced as is, with three rules added for
-the page. Five scripts, two SVG icons, no JavaScript library.
+HTML, CSS with Bootstrap 5.1 for the grid and the cards, and vanilla
+JavaScript. Five scripts, two SVG icons, no JavaScript library.
 
 ## Résumé
 
@@ -72,9 +69,7 @@ avec `addEventListener` ; le HTML ne porte aucun attribut d'événement. Le
 changement de couleur est fait volontairement par le script et non par une
 règle `:hover`, puisque c'est le sujet de la carte. Les deux icônes de
 terminal sont des SVG dessinés pour le projet, la version animée portant ses
-propres images clés CSS. La mise en page reprend le gabarit ASP.NET Core tel
-qu'il est livré, Bootstrap 5.1.0 compris. Interface et vocabulaire du code en
-français.
+propres images clés CSS. Interface et vocabulaire du code en français.
 
 ## Licence
 
